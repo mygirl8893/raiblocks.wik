@@ -2503,6 +2503,12 @@ Response:
 }
 ```  
 
+### Optional "use_peers"
+_version 14.0+_
+
+If the optional `use_peers` parameter is set to `true`, then the node will query its work peers (if it has any).
+Without this parameter, the node will only generate work locally.
+
 ## Work get
 _enable_control required, version 8.0+_     
 Retrieves work for **account** in **wallet**  
