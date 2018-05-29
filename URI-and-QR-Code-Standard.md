@@ -27,3 +27,6 @@ Send to an address with amount, label and message
 # Seed Import
 
     xrbseed:<encoded seed>[?][label=<label>][&][message=<message>][&][lastindex=<index>]
+
+# Process a JSON blob block (to be sent as the `block` argument to the RPC call `process`)
+    xrbblock:<blob>
