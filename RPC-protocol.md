@@ -1372,6 +1372,9 @@ Response:
   "hash": "42A723D2B60462BF7C9A003FE9A70057D3A6355CA5F1D0A57581000000000000"   
 }
 ```
+### Optional "force"  
+_version 13.1+_  
+Manually forcing fork resolution if processed block is not accepted as fork
 
 
 ## Receive  
