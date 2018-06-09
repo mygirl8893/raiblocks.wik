@@ -2556,7 +2556,7 @@ Request:
 ```
 {  
     "action": "work_peer_add",  
-    "address": "::ffff:172.17.0.1:7076",  
+    "address": "::ffff:172.17.0.1",  
     "port": "7076" 
 }
 ```  
