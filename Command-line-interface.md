@@ -50,6 +50,9 @@ Profile signature generation
 ### --debug_opencl --platform=`<platform>` --device=`<device>` --threads=`<threads>`
 _[Draft]_ Profile OpenCL work generation for `<device>` on `<platform>` using `<threads>` count. To retrieve available platforms & devices run --diagnostics
 
+### --delete_node_id
+Delete the node ID in the database
+
 ### --diagnostics
 Run internal diagnostics
 
@@ -63,13 +66,13 @@ Generates a adhoc random keypair and prints it to stdout
 Derive public key and account number from `<key>`
 
 ### --snapshot
-Compact database and create snapshot, functions similar to vacuum but does not replace the existing database. Optional `--unchecked_clear`
+Compact database and create snapshot, functions similar to vacuum but does not replace the existing database. Optional `--unchecked_clear`, `--delete_node_id`
 
 ### --unchecked_clear
 Clear unchecked blocks
 
 ### --vacuum
-Compact database. If data_path is missing, the database in data directory is compacted. Optional `--unchecked_clear`
+Compact database. If data_path is missing, the database in data directory is compacted. Optional `--unchecked_clear`, `--delete_node_id`
 
 ### --version    
 Prints out version
