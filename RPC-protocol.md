@@ -1192,6 +1192,51 @@ Additional sorting accounts in descending order
 ## Offline signing  (create block)
 _enable_control required, version 9.0+_  
 Creates a json representations of new block based on input data & signed with **private key** or **account** in *wallet**  
+   
+
+Request sample for **state block**:  
+```
+{  
+  "action": "block_create",   
+  "type": "state",   
+  "balance": "1000000000000000000000",   
+  "key": "0000000000000000000000000000000000000000000000000000000000000002",   
+  "representative": "xrb_1hza3f7wiiqa7ig3jczyxj5yo86yegcmqk3criaz838j91sxcckpfhbhhra1",   
+  "link": "19D3D919475DEED4696B5D13018151D1AF88B2BD3BCFF048B45031C1F36D1858",   
+  "previous": "F47B23107E5F34B2CE06F562B5C435DF72A533251CB414C51B2B62A8F63A00E4"   
+}
+```  
+Parameters for **state block**:
+* balance: **final** balance for account after block creation, formatted in 'raw' units using a decimal integer. If balance is less than previous, block is considered as send subtype!
+* wallet (optional): The wallet ID that the account the block is being created for is in.
+* account (optional): The account the block is being created for (xrb_youraccount)ю
+* key (optional): Instead of using "wallet" & "account" parameters, you can directly pass in a private key.
+* source (optional): The block hash of the source of funds for this receive block (the send block that this receive block will pocket).
+* destination (optional): The account that the sent funds should be accessible to.
+* link (optional): Instead of using "source" & "destination" parameters, you can directly pass "link" (source to receive or destination public key to send).
+* representative: The account that block account will use as its representative.
+* previous: The block hash of the previous block on this account's block chain ("0" for first block).
+
+**Warning:** It is **critical** that `balance` is the balance of the account **after** created block!
+
+Response sample for **state block**:  
+```
+{  
+   "hash": "FF0144381CFF0B2C079A115E7ADA7E96F43FD219446E7524C48D1CC9900C4F17",   
+   "block": "{\n    
+      \"type\": \"state\",\n    
+      \"account\": \"xrb_3qgmh14nwztqw4wmcdzy4xpqeejey68chx6nciczwn9abji7ihhum9qtpmdr\",\n    
+      \"previous\": \"F47B23107E5F34B2CE06F562B5C435DF72A533251CB414C51B2B62A8F63A00E4\",\n    
+      \"representative\": \"xrb_1hza3f7wiiqa7ig3jczyxj5yo86yegcmqk3criaz838j91sxcckpfhbhhra1\",\n    
+      \"balance\": \"1000000000000000000000\",\n    
+      \"link\": \"19D3D919475DEED4696B5D13018151D1AF88B2BD3BCFF048B45031C1F36D1858\",\n    
+      \"link_as_account\": \"xrb_18gmu6engqhgtjnppqam181o5nfhj4sdtgyhy36dan3jr9spt84rzwmktafc\",\n    
+      \"signature\": \"3BFBA64A775550E6D49DF1EB8EEC2136DCD74F090E2ED658FBD9E80F17CB1C9F9F7BDE2B93D95558EC2F277FFF15FD11E6E2162A1714731B743D1E941FA4560A\",\n    
+      \"work\": \"cab7404f0b5449d0\"\n
+   }\n"
+}
+```  
+   
 Request sample for **open block**:  
 ```
 {  
