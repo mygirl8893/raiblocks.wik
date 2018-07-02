@@ -2646,23 +2646,26 @@ Response:
 ```  
 
 ## RPC callback
-Send JSON POST requests with every new block to callback server _http://callback_address:callback_port<callback_target>_ defined in [config.json](https://github.com/clemahieu/raiblocks/wiki/config.json). Callback target should include a leading slash. Block object is returned as a string [issue/749](https://github.com/nanocurrency/raiblocks/issues/749) 
+Send JSON POST requests with every confirmed block to callback server _http://callback_address:callback_port<callback_target>_ defined in [config.json](https://github.com/clemahieu/raiblocks/wiki/config.json). Callback target should include a leading slash. Block object is returned as a string [issue/749](https://github.com/nanocurrency/raiblocks/issues/749) 
 Sample:  
 https://localhost:8080/callback  
 
 ```
 {  
-    "account": "xrb_1m5cfk468k9cwfdp8zsiktc3dghxh6qabef7mno5odos9h91nn5wzs58g7st",  
-    "hash": "B5678177F615A890C28F6716FBD81E1068ADAC27C85E00EDCCC21832CFF1C413",  
-    "block": {  
-        "type": "send",  
-        "previous": "F91264792342F6B99CC9B3C946726537EFA5F7C925CCCAB49C32B5B423CCB07B",  
-        "destination": "xrb_39ymww61tksoddjh1e43mprw5r8uu1318it9z3agm7e6f96kg4ndqg9tuds4",  
-        "balance": "000000015D47BE1FF551BFBBE1000000",  
-        "work": "f57ec8eab4e3d760",  
-        "signature": "DBD8ECA13CCDEC87FAE0E7B2AAA2460492249410A18E9C06AD454862260038D8B55ACD130F9C402C24ED3E97C579E33C82B93368156B8E0E4183CF7B45205B0A"  
-    },  
-    "amount": "1099000000000000000000000000000000"  
+    "account": "xrb_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",  
+    "hash": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9",  
+    "block": "{\n    
+             \"type\": \"state\",\n
+             \"account\": \"xrb_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est\",\n    
+             \"previous\": \"CE898C131AAEE25E05362F247760F8A3ACF34A9796A5AE0D9204E86B0637965E\",\n    
+             \"representative\": \"xrb_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou\",\n    
+             \"balance\": \"5606157000000000000000000000000000000\",\n    
+             \"link\": \"5D1AA8A45F8736519D707FCB375976A7F9AF795091021D7E9C7548D6F45DD8D5\",\n    
+             \"link_as_account\": \"xrb_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z\",\n    
+             \"signature\": \"82D41BC16F313E4B2243D14DFFA2FB04679C540C2095FEE7EAE0F2F26880AD56DD48D87A7CC5DD760C5B2D76EE2C205506AA557BF00B60D8DEE312EC7343A501\",\n    
+            \"work\": \"8a142e07a10996d5\"\n    
+         }\n",  
+    "amount": "30000000000000000000000000000000000"  
 }
 ```  
 
