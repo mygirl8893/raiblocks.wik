@@ -752,7 +752,7 @@ Response:
 ```
 
 ## Block count by type  
-Reports the number of blocks in the ledger by type (send, receive, open, change)   
+Reports the number of blocks in the ledger by type (send, receive, open, change, state)   
 Request:  
 ```
 {  
@@ -765,7 +765,8 @@ Response:
     "send": "1000",   
     "receive": "900",   
     "open": "100",   
-    "change": "50"  
+    "change": "50",   
+    "state": "10000"         
 }
 ```  
 
