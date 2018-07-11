@@ -1,12 +1,12 @@
 # Distribution
-The initial distribution of XRB was performed through manual mining limited via a captcha.  There's also an overall rate limit set by the distribution schedule. The distribution rate was 17,000 Mxrb per hour. Distribution stopped after 39% as distributed and the rest of the supply was burnt. For more info: [Tech Summary](https://raiblocks.net/page/summary.php)
+The initial distribution of Nano (formerly XRB) was performed through manual mining limited via a captcha.  There's also an overall rate limit set by the distribution schedule. The distribution rate was 17,000 NANO per hour. Distribution stopped after 39% as distributed and the rest of the supply was burnt. For more info: [Tech Summary](https://raiblocks.net/page/summary.php)
 
 Genesis account:  
-**xrb_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3**  
+**nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3**  
 Landing account:  
-**xrb_13ezf4od79h1tgj9aiu4djzcmmguendtjfuhwfukhuucboua8cpoihmh8byo**  
+**nano_13ezf4od79h1tgj9aiu4djzcmmguendtjfuhwfukhuucboua8cpoihmh8byo**  
 Faucet account: (no more used since 2017-01-19 12:02:21 am)  
-**xrb_35jjmmmh81kydepzeuf9oec8hzkay7msr6yxagzxpcht7thwa5bus5tomgz9**  
+**nano_35jjmmmh81kydepzeuf9oec8hzkay7msr6yxagzxpcht7thwa5bus5tomgz9**  
 
 The genesis balance is kept in cold storage in a bank secure box.  
 Blocks move from the genesis account to the landing account once per week in order to minimize the number of live undistributed blocks.   
@@ -14,17 +14,17 @@ Blocks move from the genesis account to the landing account once per week in ord
 No portion of any of the listed accounts is reserved by anyone.  All genesis blocks will be made available to anyone via the same distribution mechanism.
 
 # Divider  
-We use a 128 bit integer to represent account balances, this is too large to present to the user so we defined a set of SI prefixes to make the numbers more accessible and avoid confusion.  The reference wallet uses Mxrb as a divider.  
-Gxrb = 1000000000000000000000000000000000, 10^33  
-Mxrb = 1000000000000000000000000000000, 10^30  
-kxrb = 1000000000000000000000000000, 10^27  
- xrb = 1000000000000000000000000, 10^24  
-mxrb = 1000000000000000000000, 10^21  
-uxrb = 1000000000000000000, 10^18  
+We use a 128 bit integer to represent account balances, this is too large to present to the user so we defined a set of SI prefixes to make the numbers more accessible and avoid confusion.  The reference wallet uses Mnano (or NANO/Nano; formerly Mxrb/XRB) as a divider.  
+Gnano = 1000000000000000000000000000000000, 10^33  
+Mnano = 1000000000000000000000000000000, 10^30  
+knano = 1000000000000000000000000000, 10^27  
+ nano = 1000000000000000000000000, 10^24  
+mnano = 1000000000000000000000, 10^21  
+unano = 1000000000000000000, 10^18  
 
 1 Mxrb used to be also called 1 Mrai
 
-1 xrb is 10^24 raw
+1 nano (formerly xrb) is 10^24 raw
 
 1 raw is the smallest possible division
 
@@ -36,4 +36,4 @@ Mining is also used as a reward mechanism for maintaining integrity of proof of 
 
 Unfortunately mining as a reward mechanism only rewards one aspect of keeping a cryptocurrency healthy, transaction processing.  In fact miners don't need to be invested at all in the currency they're mining which gives skewed incentives.  The beneficiaries of mining unfortunately also tend to be slanted toward enthusiasts or those with capital investment in mining hardware.  The reward value for mining is not fixed with its cost, in the long term the value generated from mining might not be enough to cover the expense of using a proof of work scheme.  
 
-Raiblocks are not generated via mining.
+Nano/Raiblocks are not generated via mining.
