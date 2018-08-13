@@ -54,3 +54,7 @@ _-- please note: using docker has been recommended as a faster method of install
 * In order to run the tests, the corresponding CMake variable must be set: `-D RAIBLOCKS_TEST=ON`.
 * With this variable set, make will also build test files, and will produce `core_test` and `slow_test` binaries, which can be executed like `./core_test`.
 * To run a node on the test network, set CMake variable: `-DACTIVE_NETWORK=rai_test_network`
+
+## Beta Network Participation
+* More information can be found at [https://beta.nano.org]
+* To run a node on the beta network, set CMake variable: `-DACTIVE_NETWORK=rai_beta_network`
