@@ -56,5 +56,5 @@ _-- please note: using docker has been recommended as a faster method of install
 * To run a node on the test network, set CMake variable: `-DACTIVE_NETWORK=rai_test_network`
 
 ## Beta Network Participation
-* More information can be found [Here] (https://beta.nano.org)
+* More information can be found [Here](https://beta.nano.org)
 * To run a node on the beta network, set CMake variable: `-DACTIVE_NETWORK=rai_beta_network`
