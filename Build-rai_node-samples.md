@@ -5,6 +5,7 @@
 ***
 
 # Ubuntu 16.04 LTS Server, Ubuntu 16.10+, Debian 8 Jessie, Debian 9 Stretch
+_Debian 8 requires Cmake 3.4+_
 
 ### Dependency Build Instructions 
 
@@ -32,7 +33,7 @@ cp rai_node ../rai_node && cd .. && ./rai_node --diagnostics
 ```
 
 # CentOS 7
-_requires GCC comiler version 4.9+ or other compiler with C++14 language support (default Centos 7 compilers are outdated)_
+_requires GCC comiler version 4.9+ or other compiler with C++14 language support (default Centos 7 compilers are outdated) + Cmake 3.4+_
 ### Dependency Build Instructions 
 
 ```bash
