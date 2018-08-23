@@ -43,9 +43,9 @@ sudo yum install git libstdc++-static curl wget libmpc-devel mpfr-devel gmp-deve
 
 ### Configure repository with modern GCC
 ```bash
-sudo yum install centos-release-scl
-sudo yum install devtoolset-7-gcc*
-scl enable devtoolset-7 bash
+sudo yum install centos-release-scl   
+sudo yum install devtoolset-7-gcc*   
+scl enable devtoolset-7 bash   
 ```
 
 ### Building modern Cmake
