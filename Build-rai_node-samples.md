@@ -38,7 +38,7 @@ _requires GCC comiler version 4.9+ or other compiler with C++14 language support
 
 ```bash
 sudo yum check-update   
-sudo yum install git libstdc++-static curl wget libmpc-devel mpfr-devel gmp-devel zlib-devel*   
+sudo yum install git libstdc++-static curl wget   
 ```
 
 ### Configure repository with modern GCC
