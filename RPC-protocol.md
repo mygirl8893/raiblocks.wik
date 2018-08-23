@@ -582,6 +582,18 @@ Response:
     }  
 }
 ```  
+### Optional "include_active"
+_version 15.0+_   
+Include active blocks without finished confirmations 
+Request:  
+```
+{  
+  "action": "accounts_pending",  
+  "accounts": ["xrb_1111111111111111111111111111111111111111111111111117353trpda", "xrb_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"],  
+  "count": "1",  
+  "include_active": "true"   
+}
+```  
 
 ## Available supply  
 Returns how many rai are in the public supply  
@@ -1971,6 +1983,18 @@ Response:
     }  
 }
 ```  
+### Optional "include_active"
+_version 15.0+_   
+Include active blocks without finished confirmations 
+Request:  
+```
+{  
+  "action": "pending",  
+  "account": "xrb_1111111111111111111111111111111111111111111111111117353trpda",  
+  "count": "1",  
+  "include_active": "true"   
+}
+```  
 
 ## Pending exists  
 _version 8.0+_   
@@ -2417,6 +2441,18 @@ Response:
              "source": "xrb_13ezf4od79h1tgj9aiu4djzcmmguendtjfuhwfukhuucboua8cpoihmh8byo"
         }   
     }  
+}
+```  
+### Optional "include_active"
+_version 15.0+_   
+Include active blocks without finished confirmations 
+Request:  
+```
+{  
+  "action": "wallet_pending",  
+  "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",    
+  "count": "1",  
+  "include_active": "true"   
 }
 ```  
 
