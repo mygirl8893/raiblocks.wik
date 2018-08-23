@@ -126,7 +126,7 @@ Important and unread
     * [Wallet representative set](#wallet-representative-set)
     * [Wallet representative](#wallet-representative)
     * [Wallet republish](#wallet-republish)
-    * [Wallet total balance](#wallet-total-balance)
+    * [Wallet info](#wallet-info)
     * [Wallet valid password](#wallet-valid-password)
     * [Wallet work get](#wallet-work-get)
 * [RPC callback](#rpc-callback)
@@ -2171,21 +2171,7 @@ Response:
 ```
 
 ## Wallet total balance  
-Returns the sum of all accounts balances in **wallet**  
-Request:  
-```
-{  
-  "action": "wallet_balance_total",  
-  "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"  
-}
-```  
-Response:  
-```
-{  
-  "balance": "10000",  
-  "pending": "10000"  
-}
-```
+Replaced with [Wallet info](#wallet-info)
 
 ## Wallet accounts balances  
 Returns how many rai is owned and how many have not yet been received by all accounts in **wallet**  
@@ -2309,6 +2295,28 @@ Response:
   "frontiers" : {  
   "xrb_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"  
   }  
+}
+```
+
+## Wallet info  
+_version 15.0+_   
+Returns the sum of all accounts balances in **wallet**, number of accounts in wallet, number of deterministic & adhoc (non-deterministic) accounts, deterministic index (index of last account derived from seed. Equal to deterministic accounts number if no accounts were removed)
+Request:  
+```
+{  
+  "action": "wallet_info",  
+  "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"  
+}
+```  
+Response:  
+```
+{  
+  "balance": "10000",   
+  "pending": "10000",   
+  "accounts_count": "3",   
+  "adhoc_count": "1",   
+  "deterministic_count": "2",   
+  "deterministic_index": "2"   
 }
 ```
 
