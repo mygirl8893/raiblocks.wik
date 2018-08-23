@@ -41,14 +41,11 @@ sudo yum check-update
 sudo yum install git gcc gcc-c++ libstdc++-static curl wget libmpc-devel mpfr-devel gmp-devel zlib-devel*   
 ```
 
-### Building modern GCC (alternatively configure repositories with GCC 4.9+)
+### Configure repository with modern GCC
 ```bash
-wget https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz   
-tar zxvf gcc-7.3.0.tar.gz && cd gcc-7.3.0   
-./configure --with-system-zlib --disable-multilib --enable-languages=c,c++   
-make -j$(nproc)   
-sudo make install   
-exec bash -l && cd ..   
+sudo yum install centos-release-scl
+sudo yum install devtoolset-7-gcc*
+scl enable devtoolset-7 bash
 ```
 
 ### Building modern Cmake
@@ -76,7 +73,7 @@ cd ..
 ```bash
 git clone --recursive https://github.com/nanocurrency/raiblocks.git rai_build   
 cd rai_build   
-cmake -DBOOST_ROOT=../[boost]/ -G "Unix Makefiles" -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/g++    
+cmake -DBOOST_ROOT=../[boost]/ -G "Unix Makefiles"   
 make rai_node   
 cp rai_node .. && cd .. && ./rai_node --diagnostics
 ```
