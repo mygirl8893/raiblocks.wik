@@ -38,15 +38,34 @@ _requires GCC comiler version 4.9+ or other compiler with C++14 language support
 
 ```bash
 sudo yum check-update   
-sudo yum install git cmake gcc gcc-c++ libstdc++-static curl wget   
+sudo yum install git gcc gcc-c++ libstdc++-static curl wget libmpc-devel mpfr-devel gmp-devel zlib-devel*   
+```
+
+### Building modern GCC (alternatively configure repositories with GCC 4.9+)
+```bash
+wget https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz   
+tar zxvf gcc-7.3.0.tar.gz && cd gcc-7.3.0   
+./configure --with-system-zlib --disable-multilib --enable-languages=c,c++   
+make -j$(nproc)   
+sudo make install   
+exec bash -l && cd ..   
+```
+
+### Building modern Cmake
+```bash
+wget https://cmake.org/files/v3.12/cmake-3.12.1.tar.gz   
+tar zxvf cmake-3.12.1.tar.gz && cd cmake-3.12.1    
+./bootstrap --prefix=/usr/local   
+make -j$(nproc)   
+sudo make install   
+cd ..    
 ```
 
 ### Building static Boost
 
 ```bash
-wget -O boost_1_66_0.tar.gz https://netix.dl.sourceforge.net/project/boost/boost/1.66.0/boost_1_66_0.tar.gz   
-tar xzvf boost_1_66_0.tar.gz   
-cd boost_1_66_0   
+wget -O boost_1_67_0.tar.gz https://netix.dl.sourceforge.net/project/boost/boost/1.67.0/boost_1_67_0.tar.gz   
+tar xzvf boost_1_67_0.tar.gz && cd boost_1_67_0   
 ./bootstrap.sh --with-libraries=filesystem,iostreams,log,program_options,thread   
 ./b2 --prefix=../[boost] link=static install   
 cd ..
@@ -57,9 +76,9 @@ cd ..
 ```bash
 git clone --recursive https://github.com/nanocurrency/raiblocks.git rai_build   
 cd rai_build   
-cmake -DBOOST_ROOT=../[boost]/ -G "Unix Makefiles"   
+cmake -DBOOST_ROOT=../[boost]/ -G "Unix Makefiles" -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/g++    
 make rai_node   
-cp rai_node ../rai_node && cd .. && ./rai_node --diagnostics
+cp rai_node .. && cd .. && ./rai_node --diagnostics
 ```
 
 # Ubuntu 16.04 on Digital Ocean Droplet ($5/Month 1GB Ram, 1 Core, 25Gb SSD)
