@@ -8,6 +8,9 @@ Get account number for the `<key>`
 ### --account_key --account=`<account>`
 Get the public key for `<account>`
 
+### --clear_send_ids   
+Remove all send IDs from the database (dangerous: not intended for production use)
+
 ### --daemon
 Start node daemon
 
@@ -66,13 +69,13 @@ Generates a adhoc random keypair and prints it to stdout
 Derive public key and account number from `<key>`
 
 ### --snapshot
-Compact database and create snapshot, functions similar to vacuum but does not replace the existing database. Optional `--unchecked_clear`, `--delete_node_id`
+Compact database and create snapshot, functions similar to vacuum but does not replace the existing database. Optional `--unchecked_clear`, `--delete_node_id`, `--clear_send_ids`
 
 ### --unchecked_clear
 Clear unchecked blocks
 
 ### --vacuum
-Compact database. If data_path is missing, the database in data directory is compacted. Optional `--unchecked_clear`, `--delete_node_id`
+Compact database. If data_path is missing, the database in data directory is compacted. Optional `--unchecked_clear`, `--delete_node_id`, `--clear_send_ids`
 
 ### --version    
 Prints out version
